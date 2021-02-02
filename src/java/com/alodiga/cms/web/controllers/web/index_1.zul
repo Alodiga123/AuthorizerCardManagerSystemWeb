@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="/WEB-INF/tld/core.dsp.tld" prefix="c" ?>
+<?page title="${c:l('sp.page.title')}"?>
+<?link rel="icon" type="image/x-icon" href="/images/favicon.ico"?>
+<?init class="com.alodiga.services.provider.web.security.IndexRedirectInit" ?>
+<zk>
+    <window id="winAdminView" width="100%" height="100%" apply="" class="general-window">
+        <style src="/css/general.css"/>
+        <borderlayout width="100%" height="100%" style="background: transparent">
+            <north border="none" size="30px" class="content-transparent">
+                <div width="100%" align="center" style="background: transparent url(./images/topbarbg.jpg);background-repeat: repeat-x;" height="30px">
+                    <hlayout>
+                        <div></div>
+                        <div width="980px" align="left" style="padding: 5px 5px 5px 5px;color:white;font-weight:bolder;">
+                             <hlayout>
+                                <div width="400px" align="left">
+                                    <hlayout>
+                                        <label value="${c:l('sp.common.atc.number')}"/>
+                                        <separator/>
+                                        <label id="lblAtcNumber"/>
+                                    </hlayout>
+                                </div>
+                                <div width="575px" align="right">
+                                    <hlayout>
+                                        <image src="/images/icon-email.png" style="cursor:pointer" onClick="Executions.sendRedirect(&quot;mailto:webmasterus@gmail.com&quot;)"/>
+                                        <image src="/images/icon-youtube.png" style="cursor:pointer" onClick="Executions.sendRedirect(&quot;http://www.youtube.com/user/AlodigaUS?blend=11&quot;)"/>
+                                        <image src="/images/icon-linkedin.png" style="cursor:pointer" onClick="Executions.sendRedirect(&quot;http://www.linkedin.com/company/456273?trk=tyah&quot;)"/>
+                                        <image src="/images/icon-gplus.png" style="cursor:pointer" onClick="Executions.sendRedirect(&quot;https://plus.google.com/u/0/b/105532997490711329388/105532997490711329388/posts&quot;)"/>
+                                        <image src="/images/icon-twitter.png" style="cursor:pointer" onClick="Executions.sendRedirect(&quot;https://twitter.com/AlodigaUS&quot;)"/>
+                                        <image src="/images/icon-facebook.png" style="cursor:pointer" onClick="Executions.sendRedirect(&quot;http://www.facebook.com/alo.diga&quot;)"/>
+                                    </hlayout>
+                                </div>
+                            </hlayout>
+                        </div>
+                <div></div>
+            </hlayout>
+        </div>
+    </north>
+    <center border="none" autoscroll="true" >
+        <window width="100%" height="1000px" apply ="com.alodiga.services.provider.web.controllers.IndexViewController" class="general-window">
+            <borderlayout width="100%" height="100%" class="content-transparent">
+                <north border="none" size="190px" class="content-transparent">
+                    <div align="center">
+                        <separator />
+                        <vlayout>
+                            <hlayout>
+                                <div></div>
+                                <div width="980px" height="110px">
+                                    <hlayout>
+                                        <div width="100px">
+                                            <image id="imgLogo" src="/images/img-alodiga-logo.png" style="cursor:pointer" />
+                                        </div>
+                                        <div width="600px"></div>
+                                        <div width="300px" align="left">
+                                            <vlayout>
+                                                <vlayout id="vl01" visible="true">
+                                                    <hlayout>
+                                                        <vlayout>
+                                                            <hlayout>
+                                                                <label id="lblLogin" value="${c:l('sp.common.login')}" width="80px" sclass="lblbold"/>:
+                                                            </hlayout>
+                                                            <separator/>
+                                                            <hlayout>
+                                                                <label id="lblPassword" value="${c:l('cms.common.password')}" width="80px" sclass="lblbold"/>:
+                                                            </hlayout>
+                                                        </vlayout>
+                                                        <vlayout>
+                                                            <textbox id="txtLogin" value="" width="120px" constraint="no empty: ${c:l('sp.error.field.required')}" />
+                                                            <hlayout>
+                                                                <textbox id="txtPassword" type="password" value="" width="120px" constraint="no empty: ${c:l('sp.error.field.required')}" />
+                                                                <button id="btnLogin" width="80px" label="${c:l('sp.common.actions.signIn')}" class="open green" tooltiptext="${c:l('sp.common.actions.signIn')}"/>
+                                                            </hlayout>
+                                                        </vlayout>
+
+                                                    </hlayout>
+                                                    <label id="lblRecoverPassword" value="${c:l('sp.common.forgotPassword')}" style="cursor:pointer; color:#086A87;font-size:12px; font-weight: bold; text-decoration:underline;" />
+                                                    <label id="lblInfo" />
+                                                </vlayout>
+                                                <vlayout id="vl02" visible="false">
+                                                    <hlayout>
+                                                        <label id="lblLoginRecover" value="${c:l('sp.common.login')}" width="80px" sclass="lblbold"/>:
+                                                        <textbox id="txtLoginRecover" value="" width="120px" constraint="no empty: ${c:l('sp.error.field.required')}" />
+                                                        <button id="btnLoginRecover" style="cursor:pointer" width="70px" class="small1 orange" label="${c:l('sp.common.actions.generate')}"/>
+                                                    </hlayout>
+
+                                                    <label id="lblInfo02" value="${c:l('sp.common.recoveryPassword.passGenerate')}" />
+                                                    <label id="lblRecoverReturn" value="${c:l('sp.common.actions.cancel')}" style="cursor:pointer; color:#086A87;font-size:12px; font-weight: bold; text-decoration:underline;" />
+                                                </vlayout>
+                                            </vlayout>
+                                        </div>
+                                    </hlayout>
+                                </div>
+                                <div></div>
+                            </hlayout>
+                            <div></div>
+                            <div width="980px" height="65px">
+                                <div width="975px" height="62px">
+                                    <div width="970px" height="35px" class="main-menu" align="left" apply="com.alodiga.services.provider.web.controllers.MenuOptionsController">
+                                        <hlayout>
+                                            <hlayout>
+                                                <button class="main-menu-button2" image="/images/icon-home.png" width="60px" onClick="Executions.sendRedirect(&quot;loggedAccountView.zul&quot;)"/>
+                                                <button class="main-menu-button2" label="${c:l('sp.common.page.about')}" width="215px" onClick="Executions.sendRedirect(&quot;http://www.alodiga.us/index.php/es/alodiga/telefonia-equipos-voip.html&quot;)"/>
+                                                <button id="btnAccessNumbers" class="main-menu-button2" label="${c:l('sp.common.accessNumbers')}" width="215px"/>
+                                                <button id="btnTerms"  class="main-menu-button2" label="${c:l('sp.common.page.terms')}" width="215px" />
+                                                <button id="btnRates" class="main-menu-button2" label="${c:l('sp.common.rates')}" width="215px" />
+                                            </hlayout>
+                                        </hlayout>
+                                    </div>
+                                </div>
+                            </div>
+                            <div></div>
+                        </vlayout>
+                    </div>
+                </north>
+                <center border="none" class="content-transparent">
+                    <div align="center">
+                        <include src="slideBannerView.zul" />
+                        <div align="center" width="980px" height="500px">
+                            <vlayout>
+                                <div height="30px" style="background: transparent url(./images/topbarbg.jpg);background-repeat: repeat-x;padding: 5px 5px 5px 5px;color:white;font-weight:bolder;" align="right">
+<!--                                            <hlayout>
+                                                <label value="${c:l('sp.common.atc')}"/>
+                                                <separator/>
+                                                <label id="lblAtcNumber1" />
+                                            </hlayout>-->
+                                </div>
+                                <hlayout>
+<!--                                            <div height="500px" width="620px" align="left">
+                                                <separator/>
+
+                                                <hlayout width="615px">
+                                                Espacio disponible
+                                                    <image src="/images/infograph1.jpg" width="610px" />
+                                                </hlayout>
+                                            </div>-->
+
+                                    <div height="810px" width="350px" align="right">
+                                        <vlayout>
+                                            <iframe src="/html/apiTwitter.html" width="345px" height="400px"> </iframe>
+                                        </vlayout>
+                                    </div>
+
+                                </hlayout>
+                            </vlayout>
+                        </div>
+                        <div></div>
+                    </div>
+                </center>
+            </borderlayout>
+        </window>
+    </center>
+    <south border="none" size="40px" class="content-transparent">
+        <div>
+            <include src="footer.zul"/>
+        </div>
+    </south>
+</borderlayout>
+ </window>
+</zk>

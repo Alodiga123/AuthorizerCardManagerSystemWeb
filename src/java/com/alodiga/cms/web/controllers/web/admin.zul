@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="/WEB-INF/tld/core.dsp.tld" prefix="c" ?>
+<?page title="${c:l('sp.common.page.title')}"?>
+<?link rel="icon" tye="image/x-icon" href="/images/favicon.ico"?>
+<?init class="com.alodiga.cms.web.security.IndexAdminRedirectInit" ?>
+<zk xmlns:n="native">
+    <window id="winAdminView" apply ="com.alodiga.cms.web.controllers.IndexAdminController_" width="100%" height="100%" class="general-window" >
+        <style src="/css/general.css"/>
+        <borderlayout width="100%" height="100%" class="content-transparent">
+            <north border="none" size="52px" class="content-transparent">
+                <borderlayout height="51px">
+                    <north size="50px" border="0" class="content-transparent">
+                        <div align="center">
+                            <hlayout style="background: transparent url(./images/topbarbg.jpg);background-repeat: repeat-x;">
+                                <div ></div>
+                                <div width="1200px" height="18px" align="center">
+                                    <label value="${c:l('sp.common.page.title')}" style="color:#837E76; font-size:16px;"/>
+                                </div>
+                                <div></div>
+                            </hlayout>
+                            <hlayout class="yellow1">
+                                <div></div>
+                                <div align="center">
+                                    <div width="1100px" height="30px" align="right" apply="com.alodiga.cms.web.controllers.AdminHeaderMenuController">
+                                    </div>
+                                </div>
+                                <div></div>
+                            </hlayout>
+                        </div>
+                    </north>
+                    <south height="0px" border="0" >
+                    </south>
+                </borderlayout>
+            </north>
+            <center border="none" flex="true" autoscroll="true" class="content-transparent" >
+                <div align="center">
+                    <hlayout>
+                        <div></div>
+                        <div width="1200px" height="600px" align="center">
+                            <hlayout>
+                                <div width="1200px" align="center">
+                                    <vlayout>
+                                        <separator/>
+                                         <separator/>
+                                          <separator/>
+                                           <separator/>
+                                            <separator/>
+                                             <separator/>
+                                             <separator/>
+                                             <separator/>
+                                              <separator/>
+                                        <image id="imgLogo" align="center" src="/images/logo_header.png"/>
+                                        <groupbox id="gbxLogin" mold="3d" width="230px" class="borderedFrame">
+                                            <caption label="${c:l('cms.common.loginTitle')}" />
+                                            <hlayout >
+                                                <vlayout>
+                                                    <grid fixedLayout="true" width="225px">
+                                                        <columns >
+                                                            <column label="" width="80px" />
+                                                            <column label="" width="140px"/>
+                                                        </columns>
+                                                        <rows>
+                                                            <row>
+                                                                <label value="${c:l('cms.common.user')}" sclass="lblbold"/>
+                                                                <hlayout>
+                                                                    <textbox id="txtLogin" width="120px" constraint="no empty: ${c:l('sp.error.field.required')}"/>
+                                                                </hlayout>
+                                                            </row>
+                                                            <row>
+                                                                <label value="${c:l('cms.common.password')}" sclass="lblbold"/>
+                                                                <textbox id="txtPassword" type="password" width="120px" constraint="no empty: ${c:l('sp.error.field.required')}"/>
+                                                            </row>
+                                                        </rows>
+                                                    </grid>
+                                                    <vlayout>
+                                                        <div align="center">
+                                                            <hlayout>
+                                                                <button id="btnLogin" label="${c:l('cms.common.signIn')}" width="80px" class="open orange" tooltiptext="${c:l('cms.common.actions.search.filter.tooltip')}"/>
+                                                                <button id="btnRecoverPassword" label="${c:l('cms.common.forgotPassword')}"  width="120px" class="open gray" tooltiptext="${c:l('cms.common.actions.cancel.filter.tooltip')}"/>
+                                                            </hlayout>
+                                                        </div>
+                                                    </vlayout>
+                                                </vlayout>
+                                            </hlayout>
+                                        </groupbox>
+                                        <groupbox id="gbxRecoverPass" mold="3d" width="230px" visible="false" class="borderedFrame">
+                                            <caption label="${c:l('cms.common.loginTitle')}" />
+                                            <hlayout >
+                                                <vlayout>
+                                                    <grid fixedLayout="true" width="225px">
+                                                        <columns >
+                                                            <column label="" width="80px" />
+                                                            <column label="" width="140px"/>
+                                                        </columns>
+                                                        <rows>
+                                                            <row>
+                                                                <label value="${c:l('sp.common.login')}" width="80px" class="lblbold"/>
+                                                                <hlayout>
+                                                                    <textbox id="txtRecoverLogin" width="120px" constraint="no empty: ${c:l('sp.error.field.required')}"/>
+                                                                </hlayout>
+                                                            </row>
+                                                        </rows>
+                                                    </grid>
+                                                    <vlayout>
+                                                        <div align="center">
+                                                            <hlayout>
+                                                                <button id="btnRecoverPass" label="${c:l('cms.common.generatePassword')}" width="100px" class="open orange" tooltiptext="${c:l('sp.common.actions.search.filter.tooltip')}"/>
+                                                                <button id="btnCancelRecoverPassword" label="${c:l('sp.common.actions.cancel')}"  width="100px" class="open gray" tooltiptext="${c:l('sp.common.actions.cancel.filter.tooltip')}"/>
+                                                            </hlayout>
+                                                        </div>
+                                                    </vlayout>
+                                                </vlayout>
+                                            </hlayout>
+                                        </groupbox>
+
+                                        <div id="divInfo" height="20px" width="100%" style="background:#B6E59E;" align="left" visible="false"/>
+                                        <separator/>
+                                        <div align="center">
+
+                                            <label value="${c:l('cms.common.page.copyright1')}" style="color:#837E76;"/>
+                                            <separator/>
+                                            <label value="${c:l('cms.common.page.copyright2')}" style="color:#837E76;"/>
+                                            <hlayout>
+                                                <label value="${c:l('cms.common.page.powerby')}" style="color:#837E76;"/>
+                                                <label value="Alodiga" style="color:#CDA869;"/>
+                                            </hlayout>
+                                        </div>
+                                    </vlayout>
+                                </div>
+                                <div width="900px" height="600px">
+                                    
+                                </div>
+                                <div></div>
+                            </hlayout>
+                        </div>
+                        <div></div>
+                    </hlayout>
+                </div>
+
+            </center>
+            <south border="none" size="40px">
+                <include src="adminFooter.zul"/>
+            </south>
+        </borderlayout>
+    </window>
+</zk>

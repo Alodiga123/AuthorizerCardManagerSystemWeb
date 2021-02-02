@@ -1,0 +1,25 @@
+<div align="center" style="background: transparent url(./images/topbarbg.jpg);background-repeat: repeat-x; border:none;" height="10px" >
+
+    <separator orient="horizontal"/>
+    <div align="center" style="background:#232323; repeat center center; border:none;" height="30px">
+        <hlayout>
+            <div></div>
+            <div align="center" width="980px" style="padding-top: 5px;">
+                <hlayout>
+                <label value="${c:l('sp.common.page.copyright')}" style="color:rgb(196, 196, 196);"/>
+                <separator orient="vertical" bar="true"/>
+                <label value="${c:l('sp.common.page.powerby')}" style="color:#837E76;"/>
+                <label value="Alodiga" style="color:#CDA869; cursor:pointer;" onClick="Executions.sendRedirect(&quot;http://www.alodiga.us&quot;)"/>
+                <separator/>
+                <separator/>
+                <separator/>
+                <separator/>
+                <image id="imgMasterCard" src="/images/icon-mc.png" style="cursor:pointer"/>
+                <image id="imgVerizon" src="/images/icon-veri.png" style="cursor:pointer"/>
+                <image id="imgVisa" src="/images/icon-visa.png" style="cursor:pointer"/>
+                </hlayout>
+            </div>
+            <div></div>
+        </hlayout>
+    </div>
+</div>
