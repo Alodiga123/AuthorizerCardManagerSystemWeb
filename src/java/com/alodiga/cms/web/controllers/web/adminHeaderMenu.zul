@@ -1,0 +1,10 @@
+
+<div width="1100px" height="30px" align="right" apply="com.alodiga.cms.web.controllers.AdminHeaderMenuController">
+    <menubar id="menubar" class="yellow1">
+        <!-- <menuitem id="mniFrench" label="${c:l('cms.common.language.french')}" image="/images/icon-flag.png" tooltiptext="${c:l('sp.common.actions.language.french')}"/ -->
+        <menuitem id="mniSpanish" label="${c:l('cms.common.language.spanish')}" image="/images/icon-flag.png" tooltiptext="${c:l('sp.common.actions.language.spanish')}"/>
+        <menuitem id="mniEnglish" label="${c:l('cms.common.language.english')}" image="/images/icon-flag.png" tooltiptext="${c:l('sp.common.actions.language.english')}"/>
+        <menuitem id="mniMyAccout" label="${c:l('cms.common.changeMyAccount')}" image="/images/icon-user.png" tooltiptext="${c:l('sp.common.actions.myAccount')}"/>
+        <menuitem id="mniLogout" label="${c:l('sp.common.logout')}" image="/images/icon-power.png" tooltiptext="${c:l('sp.common.logout')}"/>
+    </menubar>
+</div>

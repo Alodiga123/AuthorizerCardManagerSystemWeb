@@ -1,0 +1,23 @@
+
+<borderlayout height="80px">
+    <north size="50px" border="0" class="content-transparent">
+        <div align="center">
+            <hlayout style="background: transparent url(./images/topbarbg.jpg);background-repeat: repeat-x;">
+                <div ></div>
+                <div width="1200px" height="18px" align="center">
+                    <label value="${c:l('sp.common.page.title')}" style="color:rgb(207, 207, 207); font-size:16px;"/>
+                </div>
+                <div></div>
+            </hlayout>
+            <hlayout class="yellow1">
+                <div></div>
+                <div align="center">
+                    <include src="adminHeaderMenu.zul"/>
+                </div>
+                <div></div>
+            </hlayout>
+        </div>
+    </north>
+    <south height="0px" border="0" >
+    </south>
+</borderlayout>
