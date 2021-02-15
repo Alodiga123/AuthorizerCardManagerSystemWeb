@@ -24,9 +24,9 @@
                                     <div height="20px" width="100%" align="left">
                                             <!--Bread crumb-->
                                         <hlayout>
-                                            <toolbarbutton label="${c:l('wallet.page.home')}" onClick='Executions.sendRedirect(&quot;home-admin.zul&quot;)'/>
+                                            <toolbarbutton label="${c:l('authorize.page.home')}" onClick='Executions.sendRedirect(&quot;home-admin.zul&quot;)'/>
                                                  |
-                                            <toolbarbutton label="${c:l('wallet.common.automaticServices')}"/>
+                                            <toolbarbutton label="${c:l('authorize.common.automaticServices')}"/>
                                         </hlayout>
                                     </div>
                                     <div height="5px" width="100%" style="background:#333;" align="left"></div>
@@ -44,28 +44,28 @@
                                                     </columns>
                                                     <rows>
                                                         <row>
-                                                            <label value="${c:l('wallet.crud.automatic.service.name')}" sclass="lblbold"/>
-                                                            <label value="${c:l('sp.automatic.service.daily.closing')}"/>
+                                                            <label value="${c:l('authorize.crud.automatic.service.name')}" sclass="lblbold"/>
+                                                            <label value="${c:l('authorize.automatic.service.daily.closing')}"/>
                                                         </row>
                                                         <row>
-                                                            <label value="${c:l('wallet.crud.automatic.service.date')}" sclass="lblbold"/>
+                                                            <label value="${c:l('authorize.crud.automatic.service.date')}" sclass="lblbold"/>
                                                             <label id="lblDailyClosingDate"/>
                                                         </row>
                                                         <row>
-                                                            <label value="${c:l('wallet.common.description')}" sclass="lblbold"/>
-                                                            <label value="${c:l('wallet.crud.automatic.service.daily.closing.description')}"/>
+                                                            <label value="${c:l('cms.common.description')}" sclass="lblbold"/>
+                                                            <label value="${c:l('authorize.crud.automatic.service.daily.closing.description')}"/>
                                                         </row>
                                                         <row>
-                                                            <label value="${c:l('wallet.crud.automatic.service.interval')}" sclass="lblbold"/>
+                                                            <label value="${c:l('authorize.crud.automatic.service.interval')}" sclass="lblbold"/>
                                                             <label id="lblDailyClosingInterval"/>
                                                         </row>
                                                         <row>
                                                             <label value="${c:l('wallet.common.options')}" sclass="lblbold"/>
                                                             <hlayout >
-                                                                <button id="btnPPNRestart" label="${c:l('wallet.crud.automatic.commission.restart')}" width="150px" height="25px" orient="vertical" class="open orange" />
-                                                                <button id="btnPPNStop" label="${c:l('wallet.crud.automatic.commission.stop')}" width="150px" height="25px" orient="vertical" class="open gray"/>
-                                                                <button id="btnPPNTimeout" label="${c:l('wallet.crud.automatic.commission.timeout')}" width="150px" height="25px" orient="vertical" class="open gray"/>
-                                                                <button id="btnPPNNextExecution" label="${c:l('wallet.crud.automatic.commission.date')}" width="180px" height="25px" orient="vertical" class="open gray"/>
+                                                                <button id="btnPPNRestart" label="${c:l('authorize.crud.automatic.commission.restart')}" width="150px" height="25px" orient="vertical" class="open orange" />
+                                                                <button id="btnPPNStop" label="${c:l('authorize.crud.automatic.commission.stop')}" width="150px" height="25px" orient="vertical" class="open gray"/>
+                                                                <button id="btnPPNTimeout" label="${c:l('authorize.crud.automatic.commission.timeout')}" width="150px" height="25px" orient="vertical" class="open gray"/>
+                                                                <button id="btnPPNNextExecution" label="${c:l('authorize.crud.automatic.commission.date')}" width="180px" height="25px" orient="vertical" class="open gray"/>
                                                             </hlayout>
                                                         </row>
                                                     </rows>
