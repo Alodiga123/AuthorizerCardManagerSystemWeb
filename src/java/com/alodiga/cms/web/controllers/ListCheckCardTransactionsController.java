@@ -174,11 +174,14 @@ public class ListCheckCardTransactionsController extends GenericAbstractListCont
                 item.setValue(transaction);
                 String pattern = "dd/MM/yyyy";
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-                item.appendChild(new Listcell(simpleDateFormat.format(transaction.getDateTransaction())));
+                item.appendChild(new Listcell(simpleDateFormat.format(transaction.getTransactionDateIssuer())));
                 item.appendChild(new Listcell(transaction.getTransactionTypeId().toString()));
                 item.appendChild(new Listcell(transaction.getCardNumber()));
-//                item.appendChild(new Listcell(transaction.getLocalCurrencyTransactionId().toString()));
-                item.appendChild(new Listcell(""));
+                if(transaction.getLocalCurrencyTransactionId() != null){
+                  item.appendChild(new Listcell(transaction.getLocalCurrencyTransactionId().toString()));  
+                } else {
+                  item.appendChild(new Listcell(""));  
+                }
                 if(transaction.getLocalCurrencyTransactionAmount() != null){
                    item.appendChild(new Listcell(transaction.getLocalCurrencyTransactionAmount().toString())); 
                 } else {
