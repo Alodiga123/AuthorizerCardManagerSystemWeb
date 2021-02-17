@@ -99,9 +99,12 @@ public class AdminMainMenuController extends GenericForwardComposer {
                         case 10://Configuration Menu
                             loadConfigurationMenuGroup(pg);
                             break; 
-                        case 11://Configuration Menu
+                        case 11://Operation Management
                             loadOperationManagement(pg);
-                            break;     
+                            break;
+                        case 12://Configuration Menu
+                            loadManagerCardKeys(pg);
+                            break;
                         default:
                             break;
                     }
@@ -135,6 +138,11 @@ public class AdminMainMenuController extends GenericForwardComposer {
         Listgroup listgroup = createListGroup(permissionGroup);
         createCell(Constants.LIST_CHECK_CARD_TRANSACTIONS, "listCardManager.zul", permissionGroup, listgroup); 
         createCell(Constants.AUTOMATIC_SERVICES, "automaticServices.zul", permissionGroup, listgroup);
+    }
+    
+    private void loadManagerCardKeys(PermissionGroup permissionGroup) {
+        Listgroup listgroup = createListGroup(permissionGroup);
+        createCell(Constants.LIST_MANAGER_CARD_KEYS, "listCardManager.zul", permissionGroup, listgroup); 
     }
     
     private void createCell(Long permissionId, String view, PermissionGroup permissionGroup, Listgroup listgroup) {
