@@ -142,7 +142,7 @@ public class AdminMainMenuController extends GenericForwardComposer {
     
     private void loadManagerCardKeys(PermissionGroup permissionGroup) {
         Listgroup listgroup = createListGroup(permissionGroup);
-        createCell(Constants.LIST_MANAGER_CARD_KEYS, "listCardManager.zul", permissionGroup, listgroup); 
+        createCell(Constants.LIST_MANAGER_CARD_KEYS, "listKeyProperties.zul", permissionGroup, listgroup); 
     }
     
     private void createCell(Long permissionId, String view, PermissionGroup permissionGroup, Listgroup listgroup) {
