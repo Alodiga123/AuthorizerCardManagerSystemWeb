@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="/WEB-INF/tld/core.dsp.tld" prefix="c" ?>
+<?page title="${c:l('sp.crud.profile.admin')}"?>
+<?link rel="icon" tye="image/x-icon" href="/images/favicon.ico"?>
+
+<zk xmlns:n="native">
+    <window id="winAdminUser" width="100%" height="100%" apply="com.alodiga.cms.web.controllers.AdminKeyPropertiesController" class="general-window">
+        <style src="/css/general.css"/>
+        <borderlayout width="100%" height="100%" class="content-transparent">
+            <north border="none" size="52px" class="content-transparent">
+                <include src="adminHeader.zul"/>
+            </north>
+            <center border="none" flex="true" class="content-transparent" autoscroll="true">
+                <div align="center" >
+                    <hlayout >
+                        <div width="1200px" align="left" height="780px">
+                            <hlayout>
+                                <div>
+                                    <include src="adminMainMenu.zul"/>
+                                </div>
+                                <div width="900px">
+                                    <vlayout>
+                                        <div height="20px" width="100%" align="left">
+                                            <!--Bread crumb-->
+                                            <hlayout>
+                                                <toolbarbutton label="${c:l('sp.bread.crumb.home')}" onClick='Executions.sendRedirect(&quot;home-admin.zul&quot;)'/>
+                                                |
+                                                <toolbarbutton label="${c:l('cms.common.user.list')}" onClick='Executions.sendRedirect(&quot;listUser.zul&quot;)'/>
+                                                |
+                                                <toolbarbutton id="tbbTitle" label="${c:l('cms.crud.user.add')}"/>
+                                            </hlayout>
+                                        </div>
+                                        <div height="5px" width="100%" style="background:#333;" align="left"></div>
+                                        <div>
+                                            <vlayout>
+                                                <div align="right">                                              
+                                                    <div align="right" width="485px">
+                                                        <hlayout>
+                                                            <label value="${c:l('cms.common.field.required.full')}" sclass="lblbold" />
+                                                        </hlayout>
+                                                    </div>
+                                                </div>
+                                                <grid fixedLayout="true">
+                                                    <columns>
+                                                        <column label="" width="290px"/>
+                                                        <column label="" width="290px"/>
+                                                        <column label="" width="290px"/>
+                                                    </columns>
+                                                    <rows>
+                                                        <group label="${c:l('cms.tab.CardProgramManagerMain')}"/>
+                                                        <row>
+                                                            <label value="${c:l('cms.common.allChannelsApply')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.country')}" sclass="lblbold"/> 
+                                                            <label value="${c:l('cms.common.program')}" sclass="lblbold"/>
+                                                        </row>
+                                                        <row>
+                                                            <hbox>
+                                                                <radiogroup id="ApplyChannels" onCheck="value = self.selectedItem.label"/>
+                                                                <grid>
+                                                                    <rows>
+                                                                        <row>
+                                                                            <radio id="aChannelsYes" label="${c:l('cms.commom.Yes')}" radiogroup="ApplyChannels" />
+                                                                            <radio id="aChannelsNo" label="${c:l('cms.commom.No')} " radiogroup="ApplyChannels"/>
+                                                                        </row>
+                                                                    </rows>
+                                                                </grid>
+                                                            </hbox>
+                                                            <hlayout>
+                                                                <combobox id="cmbCountry" width="250px" mold="rounded" readonly="true" />
+                                                            </hlayout>
+                                                            <hlayout>
+                                                                <combobox id="cmbProgram" width="250px" mold="rounded" readonly="true" />
+                                                            </hlayout> 
+                                                            
+                                                        </row>
+                                                        <row>
+                                                            <label value="${c:l('cms.common.issuer')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.bin')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.product')}" sclass="lblbold"/> 
+                                                        </row>
+                                                        <row>
+                                                            <label id="lblIssuer" width="250px"/>
+                                                            
+                                                            <label id="lblBinNumber" width="250px"/>
+                                                            <hlayout>
+                                                                <combobox id="cmbProduct" width="250px" mold="rounded" readonly="true" />
+                                                            </hlayout> 
+                                                            
+                                                        </row>
+                                                        <row>
+                                                           <label value="${c:l('cms.common.channel')}" sclass="lblbold"/> 
+                                                        </row>
+                                                        <row>
+                                                           <hlayout>
+                                                                <combobox id="cmbChannel" width="250px" mold="rounded" readonly="true" />
+                                                            </hlayout>   
+                                                        </row>
+                                                    </rows>    
+                                                </grid>
+                                                <grid fixedLayout="true">
+                                                    <columns>
+                                                        <column label="" width="290px"/>
+                                                        <column label="" width="290px"/>
+                                                        <column label="" width="290px"/>
+                                                    </columns>
+                                                    <rows>
+                                                        <group label="${c:l('authorize.crud.keyProperties')}"/>
+                                                        <row>
+                                                            <label value="${c:l('cms.common.length.segment')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.numberTotal')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.daysExpired')}" sclass="lblbold"/>
+                                                        </row>
+                                                        <row>                                                            
+                                                            <hlayout>
+                                                                <intbox id="intSegment" width="250px" maxlength="11"/>
+                                                            </hlayout>
+                                                            <hlayout>
+                                                                <intbox id="intNumberTotal" width="250px" maxlength="11"/>
+                                                            </hlayout>
+                                                            <hlayout>
+                                                                <intbox id="intDaysExpired" width="250px" maxlength="11"/>
+                                                            </hlayout>
+                                                        </row>
+                                                        <row>
+                                                            <label value="${c:l('cms.common.previusKeys')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.caracterSegment')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.caracterSegmentCon')}" sclass="lblbold"/>
+                                                        </row>
+                                                        <row>                                                            
+                                                            <hlayout>
+                                                                <intbox id="intPreviusKeys" width="250px" maxlength="11"/>
+                                                            </hlayout>
+                                                            <hbox>
+                                                                <radiogroup id="CharactersFollowed" onCheck="value = self.selectedItem.label"/>
+                                                                <grid>
+                                                                    <rows>
+                                                                        <row>
+                                                                            <radio id="cFollowedYes" label="${c:l('cms.commom.Yes')}" radiogroup="CharactersFollowed" />
+                                                                            <radio id="cFollowedNo" label="${c:l('cms.commom.No')} " radiogroup="CharactersFollowed" checked = "true"/>
+                                                                        </row>
+                                                                    </rows>
+                                                                </grid>
+                                                            </hbox>
+                                                            <hbox>
+                                                                <radiogroup id="ContinuousCharacters" onCheck="value = self.selectedItem.label"/>
+                                                                <grid>
+                                                                    <rows>
+                                                                        <row>
+                                                                            <radio id="cCharactersYes" label="${c:l('cms.commom.Yes')}" radiogroup="ContinuousCharacters" />
+                                                                            <radio id="cCharactersNo" label="${c:l('cms.commom.No')} " radiogroup="ContinuousCharacters" checked = "true"/>
+                                                                        </row>
+                                                                    </rows>
+                                                                </grid>
+                                                            </hbox>
+                                                        </row> 
+                                                    </rows>
+                                                </grid> 
+                                            </vlayout>
+                                        </div>
+                                        <div id="divInfo" height="20px" width="100%" style="background:#B6E59E;" align="left" visible="false"/>
+                                        <!--Buttons-->
+                                        <div align="right">
+                                            <button  id="btnSave" width="150px" label="${c:l('sp.common.actions.save')}" class="open orange"/>
+                                            <button  id="btnBack" width="150px" label="${c:l('sp.common.actions.back')}" class="open gray" onClick="Executions.sendRedirect(&quot;listKeyProperties.zul&quot;)"/>
+                                        </div>
+                                    </vlayout>
+                                </div>
+                            </hlayout>
+                        </div>
+                    </hlayout>
+                </div>
+            </center>
+        </borderlayout>
+    </window>
+</zk>
