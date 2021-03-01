@@ -97,7 +97,7 @@
                                                         <row> 
                                                             <label id="lblExpirationDate" width="250px"/>                                                           
                                                             <label id="lblCardStatus" width="250px"/>
-                                                            <label id="lblPoints" width="250px"/>
+                                                            <label id="lblPoints" width="250px" sclass="lblbold"/>
                                                         </row>   
                                                     </rows>
                                                 </grid>  
