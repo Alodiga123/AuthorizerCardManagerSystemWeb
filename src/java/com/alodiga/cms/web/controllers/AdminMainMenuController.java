@@ -151,6 +151,7 @@ public class AdminMainMenuController extends GenericForwardComposer {
     private void loadCardsManagementGroup(PermissionGroup permissionGroup) {
         Listgroup listgroup = createListGroup(permissionGroup);
         createCell(Constants.CHECK_BONUS_POINTS, "adminCheckBonusPoints.zul", permissionGroup, listgroup); 
+        createCell(Constants.LIST_POINTS_CONVERSION, "listPointsConversion.zul", permissionGroup, listgroup); 
     }
     
     private void createCell(Long permissionId, String view, PermissionGroup permissionGroup, Listgroup listgroup) {

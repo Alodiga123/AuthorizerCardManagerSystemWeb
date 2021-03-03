@@ -186,7 +186,7 @@ public class AdminCheckBonusPointsController extends GenericAbstractAdminControl
     public BonusCard getBonusCard(Long cardId){
         BonusCard bonusCard = null;
         try{
-          bonusCard = cardEJB.getBonusCard(cardId);
+          bonusCard = cardEJB.getBonusCardByCardId(cardId);
           if(bonusCard == null){
             return bonusCard; 
           }
