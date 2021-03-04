@@ -96,9 +96,18 @@ public class AdminMainMenuController extends GenericForwardComposer {
                         case 1://Secutiry Management
                             loadSecurityManagementGroup(pg);
                             break;
+                        case 7://Cards Management
+                            loadCardsManagementGroup(pg);
+                            break;    
                         case 10://Configuration Menu
                             loadConfigurationMenuGroup(pg);
                             break; 
+                        case 11://Operation Management
+                            loadOperationManagement(pg);
+                            break;
+                        case 12://Configuration Menu
+                            loadManagerCardKeys(pg);
+                            break;
                         default:
                             break;
                     }
@@ -126,6 +135,23 @@ public class AdminMainMenuController extends GenericForwardComposer {
         createCell(Constants.LIST_SYSTEM_OPTIONS_LANGUAGE, "listPermissionData.zul", permissionGroup, listgroup);  
         createCell(Constants.LIST_MENU_OPTIONS, "listPermissionGroup.zul", permissionGroup, listgroup);  
         createCell(Constants.LIST_MENU_OPTIONS_LANGUAGE, "listPermissionGroupData.zul", permissionGroup, listgroup);    
+    }
+    
+    private void loadOperationManagement(PermissionGroup permissionGroup) {
+        Listgroup listgroup = createListGroup(permissionGroup);
+        createCell(Constants.LIST_CHECK_CARD_TRANSACTIONS, "listCardManager.zul", permissionGroup, listgroup); 
+        createCell(Constants.AUTOMATIC_SERVICES, "automaticServices.zul", permissionGroup, listgroup);
+    }
+    
+    private void loadManagerCardKeys(PermissionGroup permissionGroup) {
+        Listgroup listgroup = createListGroup(permissionGroup);
+        createCell(Constants.LIST_MANAGER_CARD_KEYS, "listKeyProperties.zul", permissionGroup, listgroup); 
+    }
+    
+    private void loadCardsManagementGroup(PermissionGroup permissionGroup) {
+        Listgroup listgroup = createListGroup(permissionGroup);
+        createCell(Constants.CHECK_BONUS_POINTS, "adminCheckBonusPoints.zul", permissionGroup, listgroup); 
+        createCell(Constants.LIST_POINTS_CONVERSION, "listPointsConversion.zul", permissionGroup, listgroup); 
     }
     
     private void createCell(Long permissionId, String view, PermissionGroup permissionGroup, Listgroup listgroup) {

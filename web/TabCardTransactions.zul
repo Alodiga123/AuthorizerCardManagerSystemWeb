@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?taglib uri="/WEB-INF/tld/core.dsp.tld" prefix="c" ?>
+<?page title="${c:l('sp.common.page.title')}"?>
+<?link rel="icon" tye="image/x-icon" href="/images/favicon.ico"?>
+<?init class="com.alodiga.cms.web.security.IndexAdminRedirectInit" ?>
+
+<zk xmlns:n="native">
+    <window id="winTabActivation" width="100%" height="100%" apply="com.alodiga.cms.web.controllers.AdminCardTransactionsControllers" class="general-window">
+        <style src="/css/general.css"/>
+        <borderlayout width="100%" height="100%" class="content-transparent">
+            <north border="none" size="52px" class="content-transparent">
+                <include src="adminHeader.zul"/>
+            </north>
+            <center border="none" flex="true" class="content-transparent" autoscroll="true">
+                <div align="center" >
+                    <hlayout >
+                        <div></div>
+                        <div width="1200px" align="left" height="1000px">
+                            <hlayout>
+                                <div>
+                                    <include src="adminMainMenu.zul"/>
+                                </div>
+                                <div width="900px">
+                                    <vlayout>
+                                        <div height="20px" width="100%" align="left">
+                                            <!--Bread crumb-->
+                                            <hlayout>
+                                                <toolbarbutton label="${c:l('sp.bread.crumb.home')}" onClick='Executions.sendRedirect(&quot;home-admin.zul&quot;)'/>
+                                                |
+                                                <toolbarbutton label="${c:l('cms.menu.cardTransactions')}" onClick='Executions.sendRedirect(&quot;listCardManager.zul&quot;)'/>
+                                            </hlayout>
+                                        </div>
+                                        <div height="5px" width="100%" style="background:#333;" align="left"></div>
+                                        <div>
+                                            <vlayout>
+                                                <tabbox id="tbxPurchaseTabs" width="970px" height="700px">
+                                                    <tabs>
+                                                        <tab id="tabCardMananger" label="${c:l('cms.tab.cardDataTransactions')}" />
+                                                        <tab id="tabCardTransactionsMananger" label="${c:l('cms.tab.cardTransactions')}" />
+                                                    </tabs>
+                                                    <tabpanels>
+                                                        <tabpanel>
+                                                            <include src="adminCardData.zul"/>
+                                                        </tabpanel>
+                                                        <tabpanel>
+                                                            <include src="listCheckCardTransactions.zul"/>
+                                                        </tabpanel>
+                                                    </tabpanels>
+                                                </tabbox>
+                                            </vlayout>
+                                        </div>
+                                        <div id="divInfo" height="20px" width="100%" style="background:#B6E59E;" align="left" visible="false"/>
+                                    </vlayout>
+                                </div>
+                                <div></div>
+                            </hlayout>
+                        </div>
+                        <div></div>
+                    </hlayout>
+                </div>
+            </center>
+            <south border="none" size="40px">
+                <include src="adminFooter.zul"/>
+            </south>
+        </borderlayout>
+    </window>
+</zk>
