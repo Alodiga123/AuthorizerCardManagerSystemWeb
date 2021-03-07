@@ -106,10 +106,11 @@ public class AdminCheckBonusPointsController extends GenericAbstractAdminControl
         PhonePerson mainPhoneUser = null;
         Integer eventType = 1;
         try {
+            //Obtener el usuario logueado
             currentuser = AccessControl.loadCurrentUser();
-         
-            // Datos del cliente
             User user = (User) session.getAttribute(Constants.USER_OBJ_SESSION);
+            
+            //Datos del cliente
             StringBuilder userName = new StringBuilder(user.getFirstNames());
             userName.append(" ");
             userName.append(user.getLastNames());
@@ -137,8 +138,7 @@ public class AdminCheckBonusPointsController extends GenericAbstractAdminControl
             }
             
             //Obtener las tarjetas del cliente
-            Long Test = 137L;
-            loadCards(Test);
+            loadCards(user.getPersonId().getId());
             
       } catch (Exception ex) {
             ex.printStackTrace();
@@ -178,18 +178,21 @@ public class AdminCheckBonusPointsController extends GenericAbstractAdminControl
         if(bonusCard != null){
           lblPoints.setValue(bonusCard.getTotalPointsAccumulated().toString());  
         } else {
-            
+           StringBuilder noPoints = new StringBuilder(Labels.getLabel("authorize.crud.checkBonusPoints.noPoints"));
+           lblPoints.setValue(noPoints.toString());
         }
     }
     
     public BonusCard getBonusCard(Long cardId){
         BonusCard bonusCard = null;
         try{
-          bonusCard = cardEJB.getBonusCard(cardId);  
+          bonusCard = cardEJB.getBonusCardByCardId(cardId);
+          if(bonusCard == null){
+            return bonusCard; 
+          }
         } catch (Exception ex) {
             ex.printStackTrace();
         } 
-
         return bonusCard;
     }
     

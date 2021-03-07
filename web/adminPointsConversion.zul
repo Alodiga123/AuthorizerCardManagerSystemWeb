@@ -4,7 +4,7 @@
 <?link rel="icon" tye="image/x-icon" href="/images/favicon.ico"?>
 
 <zk xmlns:n="native">
-    <window id="winAdminUser" width="100%" height="100%" apply="com.alodiga.cms.web.controllers.AdminCheckBonusPointsController" class="general-window">
+    <window id="winAdminUser" width="100%" height="100%" apply="com.alodiga.cms.web.controllers.AdminPointsConversionController" class="general-window">
         <style src="/css/general.css"/>
         <borderlayout width="100%" height="100%" class="content-transparent">
             <north border="none" size="52px" class="content-transparent">
@@ -25,7 +25,7 @@
                                             <hlayout>
                                                 <toolbarbutton label="${c:l('sp.bread.crumb.home')}" onClick='Executions.sendRedirect(&quot;home-admin.zul&quot;)'/>
                                                 |
-                                                <toolbarbutton label="${c:l('authorize.crud.checkBonusPoints.menu')}" onClick='Executions.sendRedirect(&quot;adminCheckBonusPoints.zul&quot;)'/>
+                                                <toolbarbutton label="${c:l('authorize.crud.infPointsConversion')}" onClick='Executions.sendRedirect(&quot;adminCheckBonusPoints.zul&quot;)'/>
                                             </hlayout>
                                         </div>
                                         <div height="5px" width="100%" style="background:#333;" align="left"></div>
@@ -78,14 +78,12 @@
                                                     <rows>
                                                         <group label="${c:l('authorize.crud.checkBonusPoints.card')}"/>
                                                         <row>
-                                                            <label value="${c:l('cms.common.cards')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.card')}" sclass="lblbold"/>
                                                             <label value="${c:l('cms.common.cardNumber')}" sclass="lblbold"/>
                                                             <label value="${c:l('cms.common.card.holder')}" sclass="lblbold"/>
                                                         </row>
                                                         <row>                                                            
-                                                            <hlayout>
-                                                                <combobox id="cmbCards" width="250px" mold="rounded" readonly="true" />
-                                                            </hlayout>
+                                                            <label id="lblCard" width="250px"/>
                                                             <label id="lblCardNumber" width="250px"/>
                                                             <label id="lblCardHolder" width="250px"/>
                                                         </row> 
@@ -101,9 +99,44 @@
                                                         </row>   
                                                     </rows>
                                                 </grid>  
+                                                <grid fixedLayout="true">
+                                                    <columns>
+                                                        <column label="" width="290px"/>
+                                                        <column label="" width="290px"/>
+                                                        <column label="" width="290px"/>
+                                                    </columns>
+                                                    <rows>
+                                                        <group label="${c:l('authorize.crud.pointsConversion')}"/>
+                                                        <row>
+                                                            <label value="${c:l('cms.common.loyaltyProgram')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.transactionType')}" sclass="lblbold"/>
+                                                            <label value="${c:l('cms.common.channel')}" sclass="lblbold"/>
+                                                        </row>
+                                                        <row>
+                                                            <label id="lblLoyaltyProgram" width="250px"/>
+                                                            <label id="lblTransactionType" width="250px"/> 
+                                                            <label id="lblChannel" width="250px"/> 
+                                                        </row>
+                                                        <row>
+                                                            <label value="${c:l('authorize.crud.pointsConversion.pointsAcumulated')}" sclass="lblbold"/>
+                                                            <label value="${c:l('authorize.crud.pointsConversion.totalPointsToConvert')}" sclass="lblbold"/>
+                                                        </row>
+                                                        <row>
+                                                            <label id="lblPointsAcumulated" width="250px"/>
+                                                            <hlayout>
+                                                                <intbox id="intPointsToConvert" width="250px" maxlength="11"/>
+                                                            </hlayout>
+                                                        </row>
+                                                    </rows>    
+                                                </grid>
                                             </vlayout>
                                         </div>
                                         <div id="divInfo" height="20px" width="100%" style="background:#B6E59E;" align="left" visible="false"/>
+                                        <!--Buttons-->
+                                        <div align="right">
+                                            <button  id="btnSave" width="150px" label="${c:l('authorize.crud.pointsConversion')}" class="open orange"/>
+                                            <button  id="btnBack" width="150px" label="${c:l('sp.common.actions.back')}" class="open gray" onClick="Executions.sendRedirect(&quot;listPointsConversion.zul&quot;)"/>
+                                        </div>
                                     </vlayout>
                                 </div>
                             </hlayout>
