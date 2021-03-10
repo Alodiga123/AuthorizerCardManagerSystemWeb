@@ -222,7 +222,7 @@ public class AdminPointsConversionController extends GenericAbstractAdminControl
         Product product = null;
         BalanceHistoryCard balanceHistoryCard = null;
         BonusCard bonusCard = null;
-        Integer documentTypeId = DocumentTypeE.BONIFICATION_CMS.getId();
+        Integer documentTypeId = DocumentTypeE.BONUS_TRANSACTION_CMS.getId();
         String sequences = null;
         String succesCode = "00";
         try {
